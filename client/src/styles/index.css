@@ -1,0 +1,8 @@
+@import './variables.css';
+@import './base.css';
+@import './navbar.css';
+@import './home.css';
+@import './movie-card.css';
+@import './discover.css';
+@import './movie-details.css';
+@import './states.css';

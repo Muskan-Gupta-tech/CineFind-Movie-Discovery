@@ -1,0 +1,35 @@
+:root {
+  /* Color: a warm paper/ticket-stock background with ink text, and TWO
+     accents (not one) so it doesn't read as the generic "dark bg + single
+     bright accent" template - a ticket-booth red for actions/wishlist,
+     a mustard for ratings, each doing a distinct job. */
+  --bg: #efe9dc;
+  --surface: #f8f4e9;
+  --surface-hover: #f1ecdd;
+  --border: #cfc4a8;
+  --ink: #241f18;
+
+  --accent: #b3392c;       /* ticket-stub red - CTAs, wishlist */
+  --accent-strong: #942e23;
+  --accent-contrast: #fdf8ee;
+
+  --gold: #a8752c;         /* mustard - ratings only */
+
+  --text-primary: #241f18;
+  --text-muted: #6b6152;
+  --text-faint: #948a76;
+
+  --danger: #b3392c;
+  --success: #4c7a4f;
+
+  /* Type: a slab/serif ticket face paired with a plain grotesque for UI,
+     rather than a display serif over dark chrome. */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Layout */
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --max-width: 1200px;
+  --nav-height: 64px;
+}

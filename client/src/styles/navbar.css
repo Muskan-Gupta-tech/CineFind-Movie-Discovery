@@ -1,0 +1,124 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+  border-bottom: 3px double var(--border);
+}
+
+.navbar__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: var(--nav-height);
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar__brand {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.navbar__toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.navbar__content {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex: 1;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar__links a {
+  color: var(--text-muted);
+  font-weight: 600;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar__links a:hover {
+  color: var(--text-primary);
+}
+
+.navbar__links a.active {
+  color: var(--text-primary);
+  border-bottom-color: var(--accent);
+}
+
+.navbar__search {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.75rem;
+  max-width: 260px;
+  width: 100%;
+}
+
+.navbar__search-icon {
+  color: var(--text-faint);
+  margin-right: 0.5rem;
+}
+
+.navbar__search input {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  width: 100%;
+}
+
+.navbar__search input:focus {
+  outline: none;
+}
+
+@media (max-width: 720px) {
+  .navbar__toggle {
+    display: block;
+  }
+
+  .navbar__content {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem 1.5rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .navbar__content--open {
+    display: flex;
+  }
+
+  .navbar__links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .navbar__search {
+    max-width: none;
+  }
+}

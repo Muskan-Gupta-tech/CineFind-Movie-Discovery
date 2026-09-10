@@ -1,0 +1,126 @@
+.movie-details {
+  padding-top: 1rem;
+}
+
+.back-link {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.movie-details__backdrop {
+  position: relative;
+  height: 260px;
+  border-radius: var(--radius-md);
+  background-size: cover;
+  background-position: center 20%;
+  background-color: var(--surface);
+  overflow: hidden;
+  margin-bottom: -80px;
+}
+
+.movie-details__backdrop-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(239, 233, 220, 0.15) 0%, var(--bg) 95%);
+}
+
+.movie-details__content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2rem;
+}
+
+.movie-details__poster img,
+.movie-details__poster .movie-card__no-poster {
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.movie-details__poster .movie-card__no-poster {
+  aspect-ratio: 2 / 3;
+}
+
+.movie-details__info h1 {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.movie-details__meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.9rem;
+}
+
+.movie-details__genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.genre-pill {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.movie-details__overview {
+  max-width: 65ch;
+  color: var(--text-primary);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.movie-details__crew {
+  color: var(--text-muted);
+  margin: 0.3rem 0;
+}
+
+.movie-details__crew strong {
+  color: var(--text-primary);
+}
+
+.movie-details__info .btn {
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 700px) {
+  .movie-details__backdrop {
+    height: 160px;
+    margin-bottom: -60px;
+  }
+
+  .movie-details__content {
+    grid-template-columns: 140px 1fr;
+    gap: 1.25rem;
+  }
+
+  .movie-details__info h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-details__content {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-details__poster {
+    max-width: 160px;
+  }
+}
