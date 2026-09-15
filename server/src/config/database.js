@@ -1,28 +1,21 @@
+const path = require('path');
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
 // Single Sequelize instance shared by the whole app.
-// DATABASE_URL looks like: mysql://user:password@host:port/dbname
 //
-// Managed MySQL providers (e.g. Aiven, PlanetScale) require an SSL
-// connection. Set DB_SSL=true in your deployment's environment variables
-// to enable it - local MySQL during development doesn't need this.
-const useSsl = process.env.DB_SSL === 'true';
+// SQLite stores the whole database in a single file on disk. DB_STORAGE_PATH
+// lets you point that file somewhere else in production (e.g. a Render
+// persistent disk mount); it defaults to ./data/cinefind.sqlite locally.
+const storagePath = process.env.DB_STORAGE_PATH || path.join(__dirname, '../../data/cinefind.sqlite');
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  dialect: 'mysql',
+const sequelize = new Sequelize({
+  dialect: 'sqlite',
+  storage: storagePath,
   logging: false, // set to console.log if you want to see generated SQL while learning
-  dialectOptions: useSsl
-    ? {
-        ssl: {
-          require: true,
-          rejectUnauthorized: false, // fine for this project's scope; a stricter setup would pin the provider's CA cert
-        },
-      }
-    : {},
   define: {
     // We manage createdAt/updatedAt ourselves via Sequelize's default timestamps,
-    // but keep column names in snake_case to match typical MySQL conventions.
+    // but keep column names in snake_case to match typical SQL conventions.
     underscored: true,
   },
 });
